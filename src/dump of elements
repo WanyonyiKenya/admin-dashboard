@@ -1,0 +1,25 @@
+import Team from './scenes/team'
+import Invoices from './scenes/Invoices'
+import Contacts from './scenes/Contacts'
+import Bar from './scenes/Bar'
+import Form from './scenes/Form'
+import Line from './scenes/Line'
+import Pie from './scenes/Pie'
+import FAQ from './scenes/FAQ'
+import Geography from './scenes/Geography'
+import  Calendar  from './scenes/Calendar'
+
+
+
+
+
+<Route path = '/Team' element = {<Team/>} />
+                        <Route path = '/Contacts' element = {<Contacts/>} />
+                        <Route path = '/Invoices' element = {<Invoices/>} />
+                        <Route path = '/Form' element = {<Form/>} />
+                        <Route path = '/Bar' element = {<Bar/>} />
+                        <Route path = '/Pie' element = {<Pie/>} />
+                        <Route path = '/Line' element = {<Line/>} />
+                        <Route path = '/FAQ' element = {<FAQ/>} />
+                        <Route path = '/Geography' element = {<Geography/>} />
+                        <Route path = '/Calendar' element = {<Calendar/>} />
