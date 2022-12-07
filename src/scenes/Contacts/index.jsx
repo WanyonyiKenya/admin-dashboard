@@ -20,8 +20,8 @@ const columns = [
      },
 
      {
-        field:'registarId',
-        headerName: 'Registar ID'
+     field:'registarId',
+     headerName: 'Registar ID'
      },
 
     {
@@ -71,7 +71,7 @@ const columns = [
 
   return (
     <Box m='20px'>
-        <Header title='CONTACTS' subtitle='Contscts for future rrference'/>
+        <Header title='CONTACTS' subtitle='Contscts for future reference'/>
         <Box
             m ='40px 0 0 0'
             height = '75vh'

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { ColorModeContext, useMode } from './theme'
 import { CssBaseline, ThemeProvider } from '@mui/material'
 import { Routes, Route } from 'react-router-dom'
@@ -18,9 +18,17 @@ import Pie from './scenes/Pie'
 import Line from './scenes/Line'
 import Geography from './scenes/Geography'
 
+import { mockDataContacts as data } from './data/data'
+
 
 const App = () => {
 const[theme,colorMode] = useMode()
+const [contact, setContact] = useState([data])
+
+const newContact = (registarId,name,age,email,phone,address,city,zipCode) =>{
+    const newContactItem = {id:Math.random()*1000,registarId,name,age,email,phone,address,city,zipCode}
+    setContact(...contact,newContactItem)
+}
 
   return (
     <ColorModeContext.Provider value={colorMode}>

@@ -56,13 +56,28 @@ const userSchema = yup.object().shape({
 
 })
 
-const Index = () => {
+const Index = ({newContact}) => {
 
-    const [contacts, setContacts] = useState (data)
+  const [id, setId] = React.useState('');
+  const [registarId, setRegistarId] = React.useState(initialValues.registeredId);
+  const [name, setName] = React.useState(initialValues.name);
+  const [age, setAge] = React.useState(initialValues.age);
+  const [email, setEmail] = React.useState(initialValues.email);
+  const [phone, setPhone] = React.useState(initialValues.phone);
+  const [address, setAddress] = React.useState(initialValues.address);
+  const [city, setCity] = React.useState(initialValues.city);
+  const [zipCode, setZipCode] = React.useState(initialValues.zipcode);
     const isNonMobile = useMediaQuery('(min-width:600px)')
 
-    const handleFormSubmit = (values) => {
-        console.log(values)
+
+    // const inputChange = (e) =>{
+    //     setRegistarId,setName,setAge,setEmail,setPhone,setAddress,setCity,setZipCode(e.target.value)
+    // }
+
+    const handleFormSubmit = (e) => {
+        e.preventDefault()
+        newContact(registarId,name,age,email,phone,address,city,zipCode)
+        // setRegistarId,setName,setAge,setEmail,setPhone,setAddress,setCity,setZipCode('')
     }
 
     return(
@@ -98,7 +113,7 @@ const Index = () => {
                             label = 'Name'
                             onBlur={handleBlur}
                             onChange = {handleChange}
-                            value = {values.name}
+                            value = {name}
                             name = 'name'
                             error = {!!touched.name && !!errors.name}
                             helperText={touched.name && errors.name}
@@ -114,7 +129,7 @@ const Index = () => {
                             label = 'email'
                             onBlur={handleBlur}
                             onChange = {handleChange}
-                            value = {values.email}
+                            value = {email}
                             name = 'email'
                             error = {!!touched.email && !!errors.email}
                             helperText={touched.email && errors.email}
@@ -130,7 +145,7 @@ const Index = () => {
                             label = 'Enter age'
                             onBlur={handleBlur}
                             onChange = {handleChange}
-                            value = {values.age}
+                            value = {age}
                             name = 'age'
                             error = {!!touched.age && !!errors.age}
                             helperText={touched.age && errors.age}
@@ -146,7 +161,7 @@ const Index = () => {
                             label = 'enter the Phone Contact'
                             onBlur={handleBlur}
                             onChange = {handleChange}
-                            value = {values.phone}
+                            value = {phone}
                             name = 'phone'
                             error = {!!touched.phone && !!errors.phone}
                             helperText={touched.phone && errors.phone}
@@ -163,7 +178,7 @@ const Index = () => {
                             label = 'Contact Address '
                             onBlur={handleBlur}
                             onChange = {handleChange}
-                            value = {values.address}
+                            value = {address}
                             name = 'address'
                             error = {!!touched.address && !!errors.address}
                             helperText={touched.address && errors.address}
@@ -180,7 +195,7 @@ const Index = () => {
                             label = 'City'
                             onBlur={handleBlur}
                             onChange = {handleChange}
-                            value = {values.city}
+                            value = {city}
                             name = 'city'
                             error = {!!touched.city && !!errors.city}
                             helperText={touched.city && errors.city}
@@ -196,7 +211,7 @@ const Index = () => {
                             label = 'Zipcode'
                             onBlur={handleBlur}
                             onChange = {handleChange}
-                            value = {values.zipcode}
+                            value = {zipCode}
                             name = 'zipcode'
                             error = {!!touched.zipcode && !!errors.zipcode}
                             helperText={touched.zipcode && errors.zipcode}
@@ -212,7 +227,7 @@ const Index = () => {
                             label = 'Your handed registration Id'
                             onBlur={handleBlur}
                             onChange = {handleChange}
-                            value = {values.registeredId}
+                            value = {registarId}
                             name = 'registredId'
                             error = {!!touched.registeredId && !!errors.registeredId}
                             helperText={touched.registeredId && errors.registeredId}
